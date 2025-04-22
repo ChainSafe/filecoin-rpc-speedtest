@@ -1,6 +1,6 @@
 # Filecoin RPC Speedtest
 
-Speed test Filecoin RPC Nodes with a pre-defined list of methods.
+Speedtest Filecoin RPC Nodes with a pre-defined list of methods.
 Built with React + TypeScript + Vite.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

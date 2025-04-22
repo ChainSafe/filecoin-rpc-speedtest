@@ -63,8 +63,8 @@ const rpcMethods = [
 ];
 
 const App = () => {
-  const storedCustomRpcs = JSON.parse(localStorage.getItem("customRpcs") || "[]");
-  const storedSelectedRpcs = JSON.parse(localStorage.getItem("selectedRpcs") || "[]");
+  const storedCustomRpcs = JSON.parse(localStorage.getItem("customRpcs") ?? "[]") as string[];
+  const storedSelectedRpcs = JSON.parse(localStorage.getItem("selectedRpcs") ?? "[]") as string[];
   const [selectedRpcUrls, setSelectedRpcUrls] = useState<string[]>(storedSelectedRpcs);
   const [customRpcUrls, setCustomRpcUrls] = useState<string[]>(storedCustomRpcs);
   const [newCustomRpc, setNewCustomRpc] = useState("");
@@ -106,7 +106,7 @@ const App = () => {
   };
 
   const addCustomRpc = () => {
-    let formattedUrl = normalizeUrl(newCustomRpc);
+    const formattedUrl = normalizeUrl(newCustomRpc);
     if (!isValidUrl(formattedUrl)) {
       alert("Invalid RPC URL");
       return;
