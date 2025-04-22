@@ -61,7 +61,7 @@ export const SpeedTestTable: React.FC<SpeedTestTableProps> = ({ rpcUrls, rpcMeth
                   {new URL(rpcUrl).hostname}
                 </Typography>
                 <Typography variant="caption" color="textSecondary">
-                  {data.find((d) => d.rpcUrl === rpcUrl)?.web3ClientVersion || "⏳"}
+                  {data.find((d) => d.rpcUrl === rpcUrl)?.web3ClientVersion ?? "⏳"}
                 </Typography>
               </TableCell>
             ))}
